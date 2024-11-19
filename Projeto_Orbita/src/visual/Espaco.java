@@ -20,7 +20,7 @@ public class Espaco extends JFrame {
 		getContentPane().setLayout(null);
 		getContentPane().add(getLblSol());
 		getContentPane().add(getLblTerra());
-		this.setSize(new Dimension(638, 568));
+		this.setSize(new Dimension(800, 800));
 		
 		this.setVisible(true);
 		getContentPane().setLayout(null);
@@ -32,7 +32,7 @@ public class Espaco extends JFrame {
 		if (lblSol == null) {
 			lblSol = new JLabel("");
 			lblSol.setIcon(new ImageIcon(Espaco.class.getResource("/Controlador/imagens/sol.png")));
-			lblSol.setBounds(280, 233, 64, 64);
+			lblSol.setBounds(361, 349, 64, 64);
 		}
 		return lblSol;
 	}

@@ -12,7 +12,7 @@ public class ControladorOrbita {
     private Espaco espaco; // Janela principal
     private Timer timer; // Timer para controlar o movimento
     private double angulo = 0; // Ângulo inicial
-    private int raio = 100; // Raio da órbita
+    private int raio = 300; // Raio da órbita
 
     public ControladorOrbita() {
         espaco = new Espaco();
@@ -20,7 +20,7 @@ public class ControladorOrbita {
     }
 
     private void iniciarOrbita() {
-        timer = new Timer(30, new ActionListener() {
+        timer = new Timer(1, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 atualizarPosicao();
@@ -37,12 +37,13 @@ public class ControladorOrbita {
         // Calcula nova posição da Terra
         int x = (int) (centroX + raio * Math.cos(angulo)) - espaco.getLblTerra().getWidth() / 2;
         int y = (int) (centroY + raio * Math.sin(angulo)) - espaco.getLblTerra().getHeight() / 2;
+        
 
         // Atualiza posição da Terra
         espaco.getLblTerra().setBounds(x, y, espaco.getLblTerra().getWidth(), espaco.getLblTerra().getHeight());
 
         // Incrementa o ângulo para criar o movimento
-        angulo += 0.02;
+        angulo += 0.005;
     }
 
     public static void main(String[] args) {
