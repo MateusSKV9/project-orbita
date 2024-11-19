@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
 import javax.swing.ImageIcon;
+import java.awt.Dimension;
 
 public class Espaco extends JFrame {
 	private JLabel lblSol;
@@ -19,18 +20,19 @@ public class Espaco extends JFrame {
 		getContentPane().setLayout(null);
 		getContentPane().add(getLblSol());
 		getContentPane().add(getLblTerra());
+		this.setSize(new Dimension(638, 568));
 		
 		this.setVisible(true);
+		getContentPane().setLayout(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setLocationRelativeTo(null);
-		this.setLayout(null);
+		this.setLocationRelativeTo(null);;
 	}
 	
 	public JLabel getLblSol() {
 		if (lblSol == null) {
 			lblSol = new JLabel("");
 			lblSol.setIcon(new ImageIcon(Espaco.class.getResource("/Controlador/imagens/sol.png")));
-			lblSol.setBounds(270, 259, 64, 64);
+			lblSol.setBounds(280, 233, 64, 64);
 		}
 		return lblSol;
 	}
@@ -39,7 +41,7 @@ public class Espaco extends JFrame {
 		if (lblTerra == null) {
 			lblTerra = new JLabel("");
 			lblTerra.setIcon(new ImageIcon(Espaco.class.getResource("/Controlador/imagens/planeta-terra.png")));
-			lblTerra.setBounds(112, 430, 32, 32);
+			lblTerra.setBounds(158, 375, 32, 32);
 		}
 		return lblTerra;
 	}
