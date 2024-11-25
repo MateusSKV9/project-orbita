@@ -3,19 +3,17 @@ package Controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
-
 import javax.swing.SwingUtilities;
-
 import visual.Espaco;
 
 public class ControladorOrbita {
-    private Espaco espaco; // Janela principal
-    private Timer timer; // Timer para controlar o movimento
-    private double angulo = 0; // Ângulo inicial
-    private int raio = 300; // Raio da órbita
+    Espaco espaco; 
+    Timer timer; 
+    private double angulo = 0;
+    private int raio = 300; 
 
-    public ControladorOrbita() {
-        espaco = new Espaco();
+    public ControladorOrbita(Espaco espaco) {
+        this.espaco = espaco;
         iniciarOrbita();
     }
 
@@ -43,12 +41,6 @@ public class ControladorOrbita {
         espaco.getLblTerra().setBounds(x, y, espaco.getLblTerra().getWidth(), espaco.getLblTerra().getHeight());
 
         // Incrementa o ângulo para criar o movimento
-        angulo += 0.005;
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new ControladorOrbita();
-        });
+        angulo += 0.003;
     }
 }

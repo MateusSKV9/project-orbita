@@ -5,27 +5,32 @@ import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
 import javax.swing.ImageIcon;
 import java.awt.Dimension;
 
-public class Espaco extends JFrame {
+public class Espaco extends JPanel {
 	private JLabel lblSol;
 	private JLabel lblTerra;
 	
 	public Espaco() {
-		getContentPane().setBackground(new Color(42, 42, 42));
-		getContentPane().setLayout(null);
-		getContentPane().add(getLblSol());
-		getContentPane().add(getLblTerra());
-		this.setSize(new Dimension(800, 800));
+		this.setBackground(new Color(42, 42, 42));
+		this.setLayout(null);
+		add(getLblSol());
+		add(getLblTerra());
+		this.setSize(800, 800);
 		
 		this.setVisible(true);
-		getContentPane().setLayout(null);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setLocationRelativeTo(null);;
+		this.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Orbitando...");
+		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBounds(309, 32, 182, 42);
+		add(lblNewLabel);
 	}
 	
 	public JLabel getLblSol() {
